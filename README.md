@@ -1,5 +1,5 @@
 # Awesome Implicit Neural Representations [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
-A curated list of resources on implicit neural representations, inspired by [awesome-computer-vision](https://github.com/jbhuang0604/awesome-computer-vision).
+A curated list of resources on implicit neural representations, originally forked from [vsitzmann/awesome-implicit-representations](https://github.com/vsitzmann/awesome-implicit-representations).
 
 > [!NOTE]
 > This is a forked repository that includes additional search results and papers curated by the current maintainer.
