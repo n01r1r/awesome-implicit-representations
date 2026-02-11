@@ -3,6 +3,7 @@ A curated list of resources on implicit neural representations, inspired by [awe
 
 > [!NOTE]
 > This is a forked repository that includes additional search results and papers curated by the current maintainer.
+> Please note that these curations are primarily focused on **image-related tasks**. Other categories from the original list may be intentionally not updated or removed to maintain this specific focus.
 
 ## What counts as an INR in this list?
 
@@ -17,85 +18,68 @@ We exclude works that:
 
 ## Table of contents
 - [Surveys & Reviews](#surveys--reviews)
-- [Theory & Foundations](#theory--foundations)
-- [Geometry & 3D Reconstruction](#geometry--3d-reconstruction)
-- [Dynamics & 4D Scenes](#dynamics--4d-scenes)
-- [Generative Models](#generative-models)
-- [Scientific, Medical & Physics](#scientific-medical--physics)
-- [Semantics, Classification & Robotics](#semantics-classification--robotics)
-- [Generalization & Meta-Learning](#generalization--meta-learning)
+- [Computational Imaging, ISP & Color](#computational-imaging-isp--color)
+- [Inverse Rendering & 3D Reconstruction](#inverse-rendering--3d-reconstruction)
+- [Generative Visual Models](#generative-visual-models)
+- [Dynamics & Video](#dynamics--video)
+- [Semantics & Visual Representation](#semantics--visual-representation)
+- [Foundations & Theory](#foundations--theory)
 - [Colabs](#colabs)
 - [Talks](#talks)
 
 ---
 
 ### Surveys & Reviews
-* **Where Do We Stand with Implicit Neural Representations? A Technical and Performance Survey** (Essakine et al. 2024) - Classifies INR methods (activation, PE, structure) and systematically compares performance across multiple tasks.
-* **Implicit Neural Representation in Medical Imaging: A Comparative Study** (Molaei et al. ICCV 2023 Workshop) - Systematic study comparing INR-based methods across various medical imaging tasks.
+* [Where Do We Stand with Implicit Neural Representations? A Technical and Performance Survey](https://arxiv.org/abs/2411.03688) (Essakine et al. 2024) - Classifies INR methods and compares performance across multiple tasks.
+* [Implicit Neural Representation in Medical Imaging: A Comparative Study](https://openaccess.thecvf.com/content/ICCV2023W/CVAMD/papers/Molaei_Implicit_Neural_Representation_in_Medical_Imaging_A_Comparative_Survey_ICCVW_2023_paper.pdf) (Molaei et al. ICCV 2023 Workshop) - Systematic study comparing INR-based methods across various medical imaging tasks.
 
-### Theory & Foundations
-* **Improved Implicit Neural Representation with Fourier Reparameterized Training** (Shi et al. CVPR 2024) - Reparameterizes MLP weights with Fourier basis to mitigate low-frequency bias and improve high-frequency expressivity.
-* [Fourier features let networks learn high frequency functions in low dimensional domains](https://people.eecs.berkeley.edu/~bmild/fourfeat/) (Tancik et al. 2020) - Explores positional encodings in an NTK framework.
-* [Implicit Neural Representations with Periodic Activation Functions (SIREN)](https://vsitzmann.github.io/siren/) (Sitzmann et al. 2020) - Proposed implicit representations with periodic nonlinearities.
-* [DeepSDF: Learning Continuous Signed Distance Functions for Shape Representation](https://arxiv.org/abs/1901.05103) (Park et al. 2019) 
-* [Occupancy Networks: Learning 3D Reconstruction in Function Space](https://arxiv.org/abs/1812.03828) (Mescheder et al. 2019)
-* [IM-Net: Learning Implicit Fields for Generative Shape Modeling](https://arxiv.org/abs/1812.02822) (Chen et al. 2018)
+### Computational Imaging, ISP & Color
+* [GamutMLP: A Lightweight MLP for Color Loss Recovery](https://arxiv.org/abs/2304.11743) (Le & Brown, CVPR 2023) - Optimizes a lightweight MLP during gamut reduction to predict clipped color values.
+* [NILUT: Conditional Neural Implicit 3D Lookup Tables for Image Enhancement](https://arxiv.org/abs/2306.11920) (Zhang et al. AAAI 2024) - Implicitly defined continuous 3D color transformations for memory-efficient and controllable image enhancement.
+* [Signal Processing for Implicit Neural Representations](https://arxiv.org/abs/2210.12648) (Xu et al. NeurIPS 2022) - *Note: Proposes INSP-Net for performing signal processing operations (denoising, smoothing) directly on INRs.*
+* [Implicit Geometric Regularization for Learning Shapes](https://github.com/amosgropp/IGR) (Gropp et al. 2020) - Learns SDFs from raw data using Eikonal equation constraints.
+* [AutoInt: Automatic Integration for Fast Neural Volume Rendering](https://davidlindell.com/publications/autoint) (Lindell et al. 2020) - Learns closed-form integral solutions for faster volume rendering.
 
-### Geometry & 3D Reconstruction
-* **Benchmarking Implicit Neural Representation and Geometric Estimation for SLAM** (Hua & Wang, CVPR 2024) - Comparative analysis of INR-based representations vs. geometric representations in SLAM using various benchmarks.
-* **Rethinking Implicit Neural Representations for Vision Learners** (Y. Song et al. arXiv 2022) - Reinterprets INR learning/usage from a vision learner perspective; compares INR structures & strategies across vision tasks.
-* [Light Field Networks: Neural Scene Representations with Single-Evaluation Rendering](vsitzmann.github.io/lfns/) (Sitzmann et al. 2021) - Represents 3D scenes via their 360-degree light field parameterized as a neural implicit representation.
-* [Neural Radiance Fields (NeRF)](https://www.matthewtancik.com/nerf) (Mildenhall et al. 2020) - Proposes positional encodings, volumetric rendering & ray-direction conditioning for high-quality single scene reconstruction.
+### Inverse Rendering & 3D Reconstruction
+* [PBR-NeRF: Inverse Rendering with Physics-Based Neural Fields](https://arxiv.org/abs/2306.02708) (2023/2024) - Jointly estimates geometry, materials, and lighting using physics-based priors for realistic relighting.
+* [Benchmarking Implicit Neural Representation and Geometric Estimation for SLAM](https://arxiv.org/abs/2403.19473) (Hua & Wang, CVPR 2024) - Comparative analysis of INR/Geometric representations in SLAM.
+* [Rethinking Implicit Neural Representations for Vision Learners](https://arxiv.org/abs/2211.12352) (Song et al. 2022) - Reinterprets INR learning/usage from a vision learner perspective.
+* [Light Field Networks: Neural Scene Representations with Single-Evaluation Rendering](https://vsitzmann.github.io/lfns/) (Sitzmann et al. 2021) - Represents 3D scenes via their 360-degree light field.
+* [Neural Radiance Fields (NeRF)](https://www.matthewtancik.com/nerf) (Mildenhall et al. 2020) - The foundational work on volumetric rendering for novel view synthesis.
 * [Pixel-NERF](https://alexyu.net/pixelnerf/) (Yu et al. 2020) - Conditions a NeRF on local features lying on camera rays.
-* [Multiview neural surface reconstruction by disentangling geometry and appearance](https://lioryariv.github.io/idr/) (Yariv et al. 2020) - Demonstrates sphere-tracing with positional encodings for reconstruction of complex 3D scenes.
-* [Neural Unsigned Distance Fields for Implicit Function Learning](https://arxiv.org/pdf/2010.13938.pdf) (Chibane et al. 2020) - Proposes to learn unsigned distance fields from raw point clouds.
-* [Local Implicit Grid Representations for 3D Scenes](https://geometry.stanford.edu/papers/jsmhnf-lligrf3s-20/jsmhnf-lligrf3s-20.pdf), [Convolutional Occupancy Networks](https://arxiv.org/abs/2003.04618), [Deep Local Shapes](https://arxiv.org/abs/2003.10983) (2020) - Hybrid voxelgrid/implicit representations to fit large-scale 3D scenes.
-* [Differentiable volumetric rendering](https://github.com/autonomousvision/differentiable_volumetric_rendering) (Niemeyer et al. 2020) - Replaces LSTM-based ray-marcher or fully-connected net for 3D geometry extraction.
-* [Scene Representation Networks](https://vsitzmann.github.io/srns/) (Sitzmann et al. 2019) - Learns implicit representations of 3D shape and geometry given only 2D images via a differentiable ray-marcher.
-* [Pifu: Pixel-aligned implicit function for high-resolution clothed human digitization](https://shunsukesaito.github.io/PIFu/) (Saito et al. 2019) - Introduction of conditioning implicit representation on local features extracted from context images.
-* [Sal: Sign agnostic learning of shapes from raw data](https://github.com/matanatz/SAL) (Atzmon et al. 2019) - Shows how we may learn SDFs from raw data without ground-truth signed distance values.
+* [Multiview neural surface reconstruction by disentangling geometry and appearance](https://lioryariv.github.io/idr/) (Yariv et al. 2020) - Sphere-tracing with positional encodings for complex 3D scenes.
+* [Neural Unsigned Distance Fields for Implicit Function Learning](https://arxiv.org/pdf/2010.13938.pdf) (Chibane et al. 2020) - Learning unsigned distance fields from raw point clouds.
+* [Scene Representation Networks](https://vsitzmann.github.io/srns/) (Sitzmann et al. 2019) - Continuous 3D-structure-aware neural scene representations.
+* [DeepSDF: Learning Continuous Signed Distance Functions for Shape Representation](https://arxiv.org/abs/1901.05103) (Park et al. 2019)
+* [Occupancy Networks: Learning 3D Reconstruction in Function Space](https://arxiv.org/abs/1812.03828) (Mescheder et al. 2019)
+* [Pifu: Pixel-aligned implicit function for high-resolution clothed human digitization](https://shunsukesaito.github.io/PIFu/) (Saito et al. 2019)
 
-### Dynamics & 4D Scenes
-* [Using INR for Video/New Representations] (Example 1, CVPR 2022) - Coordinate-based MLP structure for continuous representation of single/multi-images.
+### Generative Visual Models
+* [Alias-Free Generative Adversarial Networks (StyleGAN3)](https://nvlabs.github.io/stylegan3/) (Karras et al. 2021) - Uses FILM-conditioned MLP as an image GAN.
+* [GIRAFFE: Representing Scenes as Compositional Generative Neural Feature Fields](https://arxiv.org/abs/2011.12100) (Niemeyer et al. 2021)
+* [Unsupervised Discovery of Object Radiance Fields](https://kovenyu.com/uorf/) (Yu et al. 2021)
+* [pi-GAN: Periodic Implicit Generative Adversarial Networks for 3D-Aware Image Synthesis](https://arxiv.org/abs/2012.00926) (Chan et al. 2020)
+* [Generative Radiance Fields for 3D-Aware Image Synthesis (GRAF)](https://autonomousvision.github.io/graf/) (Schwarz et al. 2020)
+* [Learning Continuous Image Representation with Local Implicit Image Function (LIIF)](https://github.com/yinboc/liif) (Chen et al. 2020) - Continuous image representation for super-resolution.
+
+### Dynamics & Video
+* [Neural Radiance Flow for 4D View Synthesis](https://yilundu.github.io/nerflow/) (2020/2021)
 * [Space-time Neural Irradiance Fields for Free-Viewpoint Video](https://video-nerf.github.io/) (2020/2021)
 * [Non-Rigid Neural Radiance Fields](https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/) (2020/2021)
 * [Nerfies: Deformable Neural Radiance Fields](https://nerfies.github.io/) (2020/2021)
 * [D-NeRF: Neural Radiance Fields for Dynamic Scenes](https://arxiv.org/abs/2011.13961) (2020/2021)
-* [Neural Scene Flow Fields](http://www.cs.cornell.edu/~zl548/NSFF/) (2020/2021)
-* [X-Fields: Implicit Neural View-, Light- and Time-Image Interpolation](https://xfields.mpi-inf.mpg.de/) (Bemana et al. 2020) - Parameterizes the Jacobian of pixel position wrt view, time, illumination.
-* [Occupancy flow: 4d reconstruction by learning particle dynamics](https://avg.is.tuebingen.mpg.de/publications/niemeyer2019iccv) (Niemeyer et al. 2019) - First proposed to learn a space-time neural implicit representation by representing a 4D warp field.
+* [X-Fields: Implicit Neural View-, Light- and Time-Image Interpolation](https://xfields.mpi-inf.mpg.de/) (Bemana et al. 2020)
 
-### Generative Models
-* [Alias-Free Generative Adversarial Networks (StyleGAN3)](https://nvlabs.github.io/stylegan3/) (Karras et al. 2021) - Uses FILM-conditioned MLP as an image GAN.
-* [GIRAFFE: Representing Scenes as Compositional Generative Neural Feature Fields](https://arxiv.org/abs/1111.12100) (Niemeyer et al. 2021)
-* [Unsupervised Discovery of Object Radiance Fields](https://kovenyu.com/uorf/) (Yu et al. 2021)
-* [Unconstrained Scene Generation with Locally Conditioned Radiance Fields](https://arxiv.org/pdf/2104.00670.pdf) (DeVries et al. 2021)
-* [pi-GAN: Periodic Implicit Generative Adversarial Networks for 3D-Aware Image Synthesis](https://arxiv.org/abs/2012.00926) (Chan et al. 2020)
-* [Generative Radiance Fields for 3D-Aware Image Synthesis (GRAF)](https://autonomousvision.github.io/graf/) (Schwarz et al. 2020)
-* [Adversarial Generation of Continuous Images](https://arxiv.org/abs/2011.12026) (Skorokhodov et al. 2020)
-* [Learning Continuous Image Representation with Local Implicit Image Function](https://github.com/yinboc/liif) (Chen et al. 2020)
+### Semantics & Visual Representation
+* [End-to-End Implicit Neural Representations for Classification](https://arxiv.org/abs/2503.18123) (Gielisse & van Gemert, CVPR 2025) - *Note: Pre-print/accepted paper.*
+* [Implicit Neural Representation Facilitates Unified Universal Vision Encoding](https://arxiv.org/abs/2601.14256) (Hu et al. 2026/2025) - *Note: "HUVR" paper, arxiv ID placeholder pending final pub.*
+* [Inferring Semantic Information with 3D Neural Scene Representations](https://www.computationalimaging.org/publications/semantic-srn/) (2020) - Weakly supervised semantic segmentation.
 
-### Scientific, Medical & Physics
-* **Implicit Neural Representation in Medical Imaging: A Comparative Study** (Molaei et al. ICCV 2023 Workshop) - Systematic study comparing INR-based methods across various medical imaging tasks.
-* [AutoInt: Automatic Integration for Fast Neural Volume Rendering](https://davidlindell.com/publications/autoint) (Lindell et al. 2020)
-* [MeshfreeFlowNet: Physics-Constrained Deep Continuous Space-Time Super-Resolution Framework](http://www.maxjiang.ml/proj/meshfreeflownet) (Jiang et al. 2020) - Performs super-resolution for spatio-temporal flow functions using local implicit representations.
-* [Implicit Geometric Regularization for Learning Shapes](https://github.com/amosgropp/IGR) (Gropp et al. 2020) - Learns SDFs by enforcing constraints of the Eikonal equation via the loss.
-
-### Semantics, Classification & Robotics
-* **End-to-End Implicit Neural Representations for Classification** (Gielisse & van Gemert, CVPR 2025) - Directly uses SIREN-based INR for classification via meta-learning + end-to-end training.
-* [Neural Descriptor Fields: SE(3)-Equvariant Object Representations for Manipulation](https://yilundu.github.io/ndf/) (2021/2022) - Leverages neural fields & vector neurons as an object-centric representation for imitation learning.
-* [3D Neural Scene Representations for Visuomotor Control](https://3d-representation-learning.github.io/nerf-dy/) (2021) - Learns latent state space for robotics tasks using neural rendering.
-* [Vector Neurons: A General Framework for SO(3)-Equivariant Networks](https://cs.stanford.edu/~congyue/vnn/) (Deng et al. 2021) - Makes conditional INRs equivariant to SO(3).
-* [Full-Body Visual Self-Modeling of Robot Morphologies](https://robot-morphology.cs.columbia.edu/) (2021)
-* [NASA: Neural Articulated Shape Approximation](https://virtualhumans.mpi-inf.mpg.de/papers/NASA20/NASA.pdf) (Deng et al. 2020)
-* [Inferring Semantic Information with 3D Neural Scene Representations](https://www.computationalimaging.org/publications/semantic-srn/) (2020) - Leverages features learned by SRNs for weakly supervised semantic segmentation.
-
-### Generalization & Meta-Learning
-* **Implicit Neural Representation Facilitates Unified Universal Vision Encoding** (Under Review / arXiv 2025) - Proposes a unified INR-based representation & learning framework for various vision tasks.
-* **Hypernetwork for INR Parameters** (Example 2, NeurIPS 2023) - Meta-representation using hypernetworks to generate INR parameters for various signals.
-* [MetaSDF: Meta-Learning Signed Distance Functions](https://vsitzmann.github.io/metasdf/) (Sitzmann et al. 2020) - Proposed gradient-based meta-learning for implicit neural representations.
-* [Learned Initializations for Optimizing Coordinate-Based Neural Representations](https://www.matthewtancik.com/learnit) (Tancik et al. 2020) - Explored gradient-based meta-learning for NeRF.
-* [SDF-SRN: Learning Signed Distance 3D Object Reconstruction from Static Images](https://github.com/chenhsuanlin/signed-distance-SRN) (Lin et al. 2020)
+### Foundations & Theory
+* [H-SIREN: Improving implicit neural representations with hyperbolic periodic functions](https://arxiv.org/abs/2410.04716) (Gao & Jaiman 2024) - Uses hyperbolic periodic activation functions to improve INR performance and convergence.
+* [Improved Implicit Neural Representation with Fourier Reparameterized Training](https://openaccess.thecvf.com/content/CVPR2024/papers/Shi_Improved_Implicit_Neural_Representation_with_Fourier_Reparameterized_Training_CVPR_2024_paper.pdf) (Shi et al. CVPR 2024)
+* [Fourier features let networks learn high frequency functions](https://people.eecs.berkeley.edu/~bmild/fourfeat/) (Tancik et al. 2020)
+* [Implicit Neural Representations with Periodic Activation Functions (SIREN)](https://vsitzmann.github.io/siren/) (Sitzmann et al. 2020)
 
 ### Colabs
 * [Implicit Neural Representations with Periodic Activation Functions](https://colab.research.google.com/github/vsitzmann/siren/blob/master/explore_siren.ipynb)
