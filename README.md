@@ -38,7 +38,7 @@ We exclude works that:
 ### Computational Imaging, ISP & Color
 * [GamutMLP: A Lightweight MLP for Color Loss Recovery](https://arxiv.org/abs/2304.11743) (Le & Brown, CVPR 2023) - Optimizes a lightweight MLP during gamut reduction to predict clipped color values.
 * [NILUT: Conditional Neural Implicit 3D Lookup Tables for Image Enhancement](https://arxiv.org/abs/2306.11920) (Zhang et al. AAAI 2024) - Implicitly defined continuous 3D color transformations for memory-efficient and controllable image enhancement.
-* [Signal Processing for Implicit Neural Representations](https://arxiv.org/abs/2210.12648) (Xu et al. NeurIPS 2022) - Performs classical signal processing operations (denoising, smoothing, filtering) directly on INR-parameterized signals.
+* [Signal Processing for Implicit Neural Representations](https://arxiv.org/abs/2210.08772) (Xu et al. NeurIPS 2022) - Performs classical signal processing operations (denoising, smoothing, filtering) directly on INR-parameterized signals.
 
 ### Inverse Rendering & 3D Reconstruction
 * [PBR-NeRF: Inverse Rendering with Physics-Based Neural Fields](https://arxiv.org/abs/2306.02708) (2023/2024) - Jointly estimates geometry, materials, and lighting using physics-based priors for realistic relighting.
