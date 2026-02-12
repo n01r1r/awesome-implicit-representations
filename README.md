@@ -34,6 +34,7 @@ We exclude works that:
 ### Surveys & Reviews
 * [Where Do We Stand with Implicit Neural Representations? A Technical and Performance Survey](https://arxiv.org/abs/2411.03688) (Essakine et al. 2024) - Classifies INR methods and compares performance across multiple tasks.
 * [Implicit Neural Representation in Medical Imaging: A Comparative Study](https://openaccess.thecvf.com/content/ICCV2023W/CVAMD/papers/Molaei_Implicit_Neural_Representation_in_Medical_Imaging_A_Comparative_Survey_ICCVW_2023_paper.pdf) (Molaei et al. ICCV 2023 Workshop) - Systematic study comparing INR-based methods across various medical imaging tasks.
+* [Neural Fields in Visual Computing and Beyond](https://arxiv.org/pdf/2111.11426) (Xie et al. 2022) - Comprehensive survey covering neural field methods across visual computing, providing a unified framework and taxonomy for coordinate-based neural representations.
 
 ### Computational Imaging, ISP & Color
 * [GamutMLP: A Lightweight MLP for Color Loss Recovery](https://arxiv.org/abs/2304.11743) (Le & Brown, CVPR 2023) - Optimizes a lightweight MLP during gamut reduction to predict clipped color values.
@@ -92,6 +93,8 @@ Methods that use implicit neural fields primarily as representational substrates
 * [Neural Descriptor Fields](https://colab.research.google.com/drive/16bFIFq_E8mnAVwZ_V2qQiKp4x4D0n1sG?usp=sharing)
 
 ### Talks
+* [SIGGRAPH 2023 Course: Neural Fields for Visual Computing](https://neuralfields.cs.brown.edu/siggraph23.html) - Course covering neural field methods for visual computing applications.
+* [CVPR 2022 Tutorial: Neural Fields in Computer Vision](https://neuralfields.cs.brown.edu/cvpr22.html) - Full-day tutorial defining the taxonomical basis and design space of neural fields. ([Recording](https://youtu.be/PeRRp1cFuH4))
 * [Vincent Sitzmann: Implicit Neural Scene Representations](https://www.youtube.com/watch?v=__F9CCqbWQk&amp;t=1s)
 * [Andreas Geiger: Neural Implicit Representations for 3D Vision](https://www.youtube.com/watch?v=F9mRv4v80w0)
 * [Gerard Pons-Moll: Shape Representations: Parametric Meshes vs Implicit Functions](https://www.youtube.com/watch?v=_4E2iEmJXW8)
