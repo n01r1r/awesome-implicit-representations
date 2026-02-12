@@ -4,6 +4,8 @@ A curated list of resources on implicit neural representations, originally forke
 > [!NOTE]
 > This is a forked repository that includes additional search results and papers curated by the current maintainer.
 > Please note that these curations are primarily focused on **image-related tasks**. Other categories from the original list may be intentionally not updated or removed to maintain this specific focus.
+>
+> For non-image INR applications (audio, PDEs, generic signals), see [Non-Image INRs](#implicit-neural-representations-beyond-images). For methods that are not strictly INRs but commonly used alongside them, see [Related Non-INR Works](#related-but-non-inr-works).
 
 ## What counts as an INR in this list?
 
@@ -36,9 +38,7 @@ We exclude works that:
 ### Computational Imaging, ISP & Color
 * [GamutMLP: A Lightweight MLP for Color Loss Recovery](https://arxiv.org/abs/2304.11743) (Le & Brown, CVPR 2023) - Optimizes a lightweight MLP during gamut reduction to predict clipped color values.
 * [NILUT: Conditional Neural Implicit 3D Lookup Tables for Image Enhancement](https://arxiv.org/abs/2306.11920) (Zhang et al. AAAI 2024) - Implicitly defined continuous 3D color transformations for memory-efficient and controllable image enhancement.
-* [Signal Processing for Implicit Neural Representations](https://arxiv.org/abs/2210.12648) (Xu et al. NeurIPS 2022) - *Note: Proposes INSP-Net for performing signal processing operations (denoising, smoothing) directly on INRs.*
-* [Implicit Geometric Regularization for Learning Shapes](https://github.com/amosgropp/IGR) (Gropp et al. 2020) - Learns SDFs from raw data using Eikonal equation constraints.
-* [AutoInt: Automatic Integration for Fast Neural Volume Rendering](https://davidlindell.com/publications/autoint) (Lindell et al. 2020) - Learns closed-form integral solutions for faster volume rendering.
+* [Signal Processing for Implicit Neural Representations](https://arxiv.org/abs/2210.12648) (Xu et al. NeurIPS 2022) - Performs classical signal processing operations (denoising, smoothing, filtering) directly on INR-parameterized signals.
 
 ### Inverse Rendering & 3D Reconstruction
 * [PBR-NeRF: Inverse Rendering with Physics-Based Neural Fields](https://arxiv.org/abs/2306.02708) (2023/2024) - Jointly estimates geometry, materials, and lighting using physics-based priors for realistic relighting.
@@ -53,9 +53,11 @@ We exclude works that:
 * [DeepSDF: Learning Continuous Signed Distance Functions for Shape Representation](https://arxiv.org/abs/1901.05103) (Park et al. 2019)
 * [Occupancy Networks: Learning 3D Reconstruction in Function Space](https://arxiv.org/abs/1812.03828) (Mescheder et al. 2019)
 * [Pifu: Pixel-aligned implicit function for high-resolution clothed human digitization](https://shunsukesaito.github.io/PIFu/) (Saito et al. 2019)
+* [Implicit Geometric Regularization for Learning Shapes](https://github.com/amosgropp/IGR) (Gropp et al. 2020) - Learns signed distance fields (SDFs) from raw 3D data using an Eikonal regularization for smooth implicit surfaces.
+* [AutoInt: Automatic Integration for Fast Neural Volume Rendering](https://davidlindell.com/publications/autoint) (Lindell et al. 2020) - Accelerates neural volume rendering by learning closed-form integral approximations along rays in neural fields.
 
 ### Generative Visual Models
-* [Alias-Free Generative Adversarial Networks (StyleGAN3)](https://nvlabs.github.io/stylegan3/) (Karras et al. 2021) - Uses FILM-conditioned MLP as an image GAN.
+* [Alias-Free Generative Adversarial Networks (StyleGAN3)](https://nvlabs.github.io/stylegan3/) (Karras et al. 2021) - Alias-free image GAN architecture; included as an INR-adjacent generative model often used in conjunction with neural fields (see also [Related Non-INR Works](#related-but-non-inr-works)).
 * [GIRAFFE: Representing Scenes as Compositional Generative Neural Feature Fields](https://arxiv.org/abs/2011.12100) (Niemeyer et al. 2021)
 * [Unsupervised Discovery of Object Radiance Fields](https://kovenyu.com/uorf/) (Yu et al. 2021)
 * [pi-GAN: Periodic Implicit Generative Adversarial Networks for 3D-Aware Image Synthesis](https://arxiv.org/abs/2012.00926) (Chan et al. 2020)
@@ -71,6 +73,8 @@ We exclude works that:
 * [X-Fields: Implicit Neural View-, Light- and Time-Image Interpolation](https://xfields.mpi-inf.mpg.de/) (Bemana et al. 2020)
 
 ### Semantics & Visual Representation
+Methods that use implicit neural fields primarily as representational substrates for classification, segmentation, or generic vision encoding, rather than for direct image synthesis or 3D reconstruction.
+
 * [End-to-End Implicit Neural Representations for Classification](https://arxiv.org/abs/2503.18123) (Gielisse & van Gemert, CVPR 2025) - *Note: Pre-print/accepted paper.*
 * [Implicit Neural Representation Facilitates Unified Universal Vision Encoding](https://arxiv.org/abs/2601.14256) (Hu et al. 2026/2025) - *Note: "HUVR" paper, arxiv ID placeholder pending final pub.*
 * [Inferring Semantic Information with 3D Neural Scene Representations](https://www.computationalimaging.org/publications/semantic-srn/) (2020) - Weakly supervised semantic segmentation.
@@ -79,7 +83,8 @@ We exclude works that:
 * [H-SIREN: Improving implicit neural representations with hyperbolic periodic functions](https://arxiv.org/abs/2410.04716) (Gao & Jaiman 2024) - Uses hyperbolic periodic activation functions to improve INR performance and convergence.
 * [Improved Implicit Neural Representation with Fourier Reparameterized Training](https://openaccess.thecvf.com/content/CVPR2024/papers/Shi_Improved_Implicit_Neural_Representation_with_Fourier_Reparameterized_Training_CVPR_2024_paper.pdf) (Shi et al. CVPR 2024)
 * [Fourier features let networks learn high frequency functions](https://people.eecs.berkeley.edu/~bmild/fourfeat/) (Tancik et al. 2020)
-* [Implicit Neural Representations with Periodic Activation Functions (SIREN)](https://vsitzmann.github.io/siren/) (Sitzmann et al. 2020)
+* [Multiresolution Neural Networks for Imaging](https://visteam.isr.uc.pt/wp-content/uploads/Paper_069_2022_Paz.pdf) (Paz et al. 2022) - Proposes multiresolution coordinate-based networks that are continuous in space and scale, with applications to continuous image representation and multilevel reconstruction.
+* [Implicit Neural Representations with Periodic Activation Functions (SIREN)](https://vsitzmann.github.io/siren/) (Sitzmann et al. 2020) - The canonical foundational INR architecture; shows sinusoidal activations with principled initialization enable fitting high-frequency signals such as images and 3D scenes with coordinate-based MLPs.
 
 ### Colabs
 * [Implicit Neural Representations with Periodic Activation Functions](https://colab.research.google.com/github/vsitzmann/siren/blob/master/explore_siren.ipynb)
@@ -95,6 +100,20 @@ We exclude works that:
 
 ## Links
 * [awesome-NeRF](https://github.com/yenchenlin/awesome-NeRF) - List of implicit representations specifically on neural radiance fields (NeRF)
+
+---
+
+### Implicit Neural Representations Beyond Images
+Classic INR papers for non-image signals (audio, PDEs, generic fields) that are outside the main image-focused scope of this list.
+
+* [Implicit Neural Representations with Periodic Activation Functions (SIREN)](https://vsitzmann.github.io/siren/) (Sitzmann et al. 2020) – Also used for audio signals and simple PDEs.
+* [Signal Processing for Implicit Neural Representations](https://arxiv.org/abs/2210.12648) (Xu et al. NeurIPS 2022) – General INR-based signal processing beyond images (denoising, smoothing, filtering).
+* [AutoInt: Automatic Integration for Fast Neural Volume Rendering](https://davidlindell.com/publications/autoint) (Lindell et al. 2020) – General volume rendering acceleration for neural fields.
+
+### Related but Non-INR Works
+Methods that are not strictly coordinate-based neural fields, but are commonly used together with INRs or inspire INR architectures.
+
+* [Alias-Free GAN (StyleGAN3)](https://nvlabs.github.io/stylegan3/) (Karras et al. 2021) – Alias-free convolutional GAN, often used as a backbone in 3D-aware generative pipelines.
 
 ## License
 License: MIT
