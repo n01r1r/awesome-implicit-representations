@@ -82,9 +82,12 @@ Methods that use implicit neural fields primarily as representational substrates
 ### Foundations & Theory
 * [H-SIREN: Improving implicit neural representations with hyperbolic periodic functions](https://arxiv.org/abs/2410.04716) (Gao & Jaiman 2024) - Uses hyperbolic periodic activation functions to improve INR performance and convergence.
 * [Improved Implicit Neural Representation with Fourier Reparameterized Training](https://openaccess.thecvf.com/content/CVPR2024/papers/Shi_Improved_Implicit_Neural_Representation_with_Fourier_Reparameterized_Training_CVPR_2024_paper.pdf) (Shi et al. CVPR 2024)
-* [Fourier features let networks learn high frequency functions](https://arxiv.org/abs/2006.10739) (Tancik et al. 2020)
 * [Multiresolution Neural Networks for Imaging](https://visteam.isr.uc.pt/wp-content/uploads/Paper_069_2022_Paz.pdf) (Paz et al. 2022) - Proposes multiresolution coordinate-based networks that are continuous in space and scale, with applications to continuous image representation and multilevel reconstruction.
+* [Rethinking Positional Encoding](https://arxiv.org/abs/2107.02561) (Zheng et al. 2021) - Generalizes Fourier feature positional encoding by showing alternative non-Fourier embeddings work, with a unifying theory based on stable rank and distance preservation of the embedded matrix. ([Code](https://github.com/osiriszjq/Rethinking-positional-encoding))
+* [Multiplicative Filter Networks](https://openreview.net/forum?id=OmtmcPkkhT) (Fathony et al. ICLR 2021) - Coordinate-based architecture using element-wise multiplication of Fourier/Gabor filter banks as an alternative to additive activations for representing continuous signals. ([Code](https://github.com/boschresearch/multiplicative-filter-networks))
+* [Fourier features let networks learn high frequency functions](https://arxiv.org/abs/2006.10739) (Tancik et al. 2020)
 * [Implicit Neural Representations with Periodic Activation Functions (SIREN)](https://www.vincentsitzmann.com/siren) (Sitzmann et al. 2020) - The canonical foundational INR architecture; shows sinusoidal activations with principled initialization enable fitting high-frequency signals such as images and 3D scenes with coordinate-based MLPs.
+* [On the Spectral Bias of Neural Networks](https://arxiv.org/abs/1806.08734) (Rahaman et al. 2018) - Shows deep ReLU networks are biased towards low-frequency functions; INR-adjacent — the key theoretical motivation for positional encodings and periodic activations in INRs.
 
 ### Colabs
 * [Implicit Neural Representations with Periodic Activation Functions](https://colab.research.google.com/github/vsitzmann/siren/blob/master/explore_siren.ipynb)
