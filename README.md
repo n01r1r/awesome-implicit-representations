@@ -28,6 +28,7 @@ We exclude works that:
 - [Foundations & Theory](#foundations--theory)
 - [Colabs](#colabs)
 - [Talks](#talks)
+- [Related but Non-INR Works](#related-but-non-inr-works)
 
 ---
 
@@ -58,7 +59,6 @@ We exclude works that:
 * [AutoInt: Automatic Integration for Fast Neural Volume Rendering](https://davidlindell.com/publications/autoint) (Lindell et al. 2020) - Accelerates neural volume rendering by learning closed-form integral approximations along rays in neural fields.
 
 ### Generative Visual Models
-* [Alias-Free Generative Adversarial Networks (StyleGAN3)](https://nvlabs.github.io/stylegan3/) (Karras et al. 2021) - Alias-free image GAN architecture; included as an INR-adjacent generative model often used in conjunction with neural fields (see also [Related Non-INR Works](#related-but-non-inr-works)).
 * [GIRAFFE: Representing Scenes as Compositional Generative Neural Feature Fields](https://arxiv.org/abs/2011.12100) (Niemeyer et al. 2021)
 * [Unsupervised Discovery of Object Radiance Fields](https://kovenyu.com/uorf/) (Yu et al. 2021)
 * [pi-GAN: Periodic Implicit Generative Adversarial Networks for 3D-Aware Image Synthesis](https://arxiv.org/abs/2012.00926) (Chan et al. 2020)
@@ -102,6 +102,11 @@ Methods that use implicit neural fields primarily as representational substrates
 * [Andreas Geiger: Neural Implicit Representations for 3D Vision](https://www.youtube.com/watch?v=F9mRv4v80w0)
 * [Gerard Pons-Moll: Shape Representations: Parametric Meshes vs Implicit Functions](https://www.youtube.com/watch?v=_4E2iEmJXW8)
 * [Yaron Lipman: Implicit Neural Representations](https://www.youtube.com/watch?v=rUd6qiSNwHs&list=PLat4GgaVK09e7aBNVlZelWWZIUzdq0RQ2&index=11) 
+
+### Related but Non-INR Works
+Methods that are **not strictly INRs** (i.e., they do not use a coordinate-based MLP as their primary signal representation) but are commonly used alongside or inspired by neural field techniques.
+
+* [Alias-Free Generative Adversarial Networks (StyleGAN3)](https://nvlabs.github.io/stylegan3/) (Karras et al. 2021) - Alias-free image GAN architecture. While INR-adjacent (its continuous signal analysis informs neural field design), the generator itself is convolutional/grid-based, not a coordinate-based MLP.
 
 ## Links
 * [awesome-NeRF](https://github.com/yenchenlin/awesome-NeRF) - List of implicit representations specifically on neural radiance fields (NeRF)
